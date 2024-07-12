@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Alert</title>
+</head>
+<body>
+    <button id="myButton">Bosib turing, ikki marta bosing yoki o'ng tugma bilan bosing</button>
+
+    <script>
+        const button = document.getElementById('myButton');
+        let timeout;
+
+        button.addEventListener('mousedown', () => {
+            timeout = setTimeout(() => {
+                alert('3 soniya bosib turdingiz!');
+            }, 3000);
+        });
+
+        button.addEventListener('mouseup', () => {
+            clearTimeout(timeout);
+        });
+
+        button.addEventListener('mouseleave', () => {
+            clearTimeout(timeout);
+        });
+
+        button.addEventListener('dblclick', () => {
+            alert('Ikki marta bosdingiz!');
+        });
+
+        button.addEventListener('contextmenu', (event) => {
+            event.preventDefault();
+            alert('O\'ng tugma bilan bosdingiz!');
+        });
+    </script>
+</body>
+</html>
